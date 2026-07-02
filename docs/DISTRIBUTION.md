@@ -25,6 +25,18 @@ cd .claude/skills && zip -r ../../dist/venture-discovery-skill.zip venture-disco
   -x '*.DS_Store'
 ```
 
+### A-2: 単一 `SKILL.md` で登録する場合(フォルダ不可のUI向け)
+
+登録UIが**単一 md ファイル**しか受け付けない場合は、`dist/standalone/SKILL.md` を使う。これは通常の SKILL.md に**ワークフロー本体(`workflow.js`)を末尾付録として同梱**した自己完結版で、実行時に付録のコードをディスクへ書き出してから `Workflow` を起動する。フォルダ登録が可能ならフォルダ版(ディスク上の `workflow.js` を直接使う)の方が確実。
+
+単一ファイル再生成:
+```bash
+# head(frontmatter+手順)は dist/standalone を生成したスクリプトを参照。
+# 手動なら: SKILL.md の付録フェンス直後に .claude/skills/venture-discovery/workflow.js を挿入し、末尾に閉じフェンスを付ける。
+cat dist/standalone/_head.md .claude/skills/venture-discovery/workflow.js > dist/standalone/SKILL.md && printf '```\n' >> dist/standalone/SKILL.md
+```
+注意: 付録は「一字一句そのまま書き出す」指示付き。`workflow.js` を更新したら単一ファイルも再生成すること(二重管理になる — フォルダ登録が使えるならそちらを優先)。
+
 ---
 
 ## ルートB(チーム/組織向け・最も確実): server-managed settings + SessionStart フック
