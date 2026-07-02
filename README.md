@@ -40,6 +40,7 @@
 | [`docs/IMPLEMENTATION_PLAN.md`](docs/IMPLEMENTATION_PLAN.md) | **マスター実装計画書** — MVP仕様、システムアーキテクチャ、データモデル、LLM原価試算、料金設計、単位経済、GTM週次アクション、12ヶ月ロードマップ、kill criteria、リスク登録簿、競合対応 |
 | [`docs/SELECTION.md`](docs/SELECTION.md) | **選定プロセス全記録** — 16構想のリーダーボード、審査設計、上位3構想のデューデリジェンス比較、ToriiGate選定の判断根拠 |
 | [`docs/RUNNERS_UP.md`](docs/RUNNERS_UP.md) | **次点2構想の完全な調査記録** — GutSignal(IBS向けAI gut coach)とYaku(ゲームローカライゼーション)。前提が変わった場合の乗り換え条件付き |
+| [`.claude/skills/venture-discovery/`](.claude/skills/venture-discovery/) | **このパイプラインのスキル化** — 発掘→敵対的審査→ファクトチェック→計画→批評改訂の再実行可能なワークフロー(`SKILL.md` 実行手順 / `workflow.js` 本体 / `DESIGN.md` 弱モデル向け設計原則) |
 
 ## 明日からの着手順
 
