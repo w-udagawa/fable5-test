@@ -27,7 +27,10 @@ description: 収益化可能なアプリ/事業構想の発掘・敵対的審査
 ### Step 2: ワークフローを起動する
 
 1. `date +%F` で日付を取得。
-2. このSKILL.mdと同じディレクトリにある `workflow.js` の**絶対パス**を解決する(リポジトリ内なら `<repo>/.claude/skills/venture-discovery/workflow.js`)。
+2. このSKILL.mdと**同じディレクトリ**にある `workflow.js` の**絶対パス**を解決する。インストール場所は環境で異なる(プロジェクト配置・claude.ai有効化・managed設定のいずれか)ため、決め打ちせず次の順で探す:
+   - まず `<現在のリポジトリ>/.claude/skills/venture-discovery/workflow.js`
+   - 次に `~/.claude/skills/venture-discovery/workflow.js`
+   - 見つからなければ `find / -name workflow.js -path '*venture-discovery*' 2>/dev/null | head -1` で特定
 3. Workflowツールを呼ぶ:
 
 ```
